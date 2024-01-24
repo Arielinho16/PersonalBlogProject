@@ -1,0 +1,18 @@
+<%- include("partials/header.ejs") %>
+<h1>Contáctate Conmigo😉</h1>
+<form action="/contact" method="POST">
+
+  <label for="title" class = "main"></label>
+  <input type ="text" id = "title" name="name" class="contactspace" placeholder="Nombre" required>
+
+  <label for="title"></label>
+  <input type ="text" id = "title" name="email" class="contactspace" placeholder="Email" required>
+
+  <label for="content"></label>
+  <textarea id="title" class="contactspace" placeholder="Comentario" name="text" required></textarea>
+
+  <input type="submit" value="Enviar" class = "principal"/>
+
+</form>
+
+<%- include("partials/footer.ejs") %>

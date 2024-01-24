@@ -1,0 +1,29 @@
+<!-- views/edit.ejs -->
+<%- include("partials/header.ejs") %>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/main.css">
+  <title>Ariel's Blog</title>
+</head>
+
+<body>
+  <h1>Edición de Post🧐</h1>
+
+  <!-- Formulario para editar un post existente -->
+  <form action="/update/<%= post.id %>" method="POST">
+    <label for="title">Titulo:</label>
+    <input type="text" id="title" name="title" class="contactspace" value="<%= post.title %>" required>
+    <label for="content">Contenido:</label>
+    <textarea id="content" name="content" class="contactspace" required><%= post.content %></textarea>
+    <button type="submit" class="principal">Actualizar Post</button>
+  </form>
+
+</body>
+
+</html>
+
+<%- include("partials/footer.ejs") %>

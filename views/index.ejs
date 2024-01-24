@@ -1,0 +1,48 @@
+<!-- views/index.ejs -->
+<%- include("partials/header.ejs") %>
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Ariel's Blog</title>
+</head>
+
+<body>
+  <h1>Bienvenidos a mi Blog😄</h1>
+  <h3>Los Mejores Posts del Mundo🌎</h3>
+
+  <!-- Formulario para crear un nuevo post -->
+  <form action="/submit" method="POST">
+    
+    <input type="text" id="title" class="contactspace" placeholder="Titulo" name="title" required>
+    
+    <textarea id="content" class="contactspace" placeholder="Contenido" name="content" required></textarea>
+    <button type="submit" class = "principal">Crear Post</button>
+  </form>
+<!-- Sección para mostrar todos los posts -->
+<div>
+  <% posts.forEach((post) => { %>
+    <div>
+      <h4><%= post.title %></h4>
+      <p><%= post.content %></p>
+      <form action="/delete/<%= post.id %>" method="POST" style="display:inline;">
+        <button type="submit" class="hangover">
+          <span class="letters">Eliminar</span>
+        </button>
+      </form>
+      <button type="submit" class="hangover"><a class="letters" href="/edit/<%= post.id %>">Editar</a></button>
+    </div>
+  <% }); %>
+</div>
+
+
+
+  
+
+</body>
+
+</html>
+<%- include("partials/footer.ejs") %>
